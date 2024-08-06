@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:movie_sreaming/contract.dart';
+import 'package:movie_sreaming/model/category_items.dart';
+import 'package:movie_sreaming/widget/Dot_row.dart';
+import 'package:movie_sreaming/widget/Listcategory.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -40,6 +43,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
+              Listcategory(
+                list: categories,
+                callbackAction: (value) => print(value.toString()),
+              ),
               SizedBox(
                 height: 140,
                 child: PageView.builder(
@@ -66,7 +73,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     );
                   },
                 ),
-              )
+              ),
+              Dot_row(list: [1, 2, 3, 4, 5], num: select_index, num2: 0)
             ],
           ),
         ),
